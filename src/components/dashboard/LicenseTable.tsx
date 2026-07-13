@@ -25,13 +25,13 @@ export default function LicenseTable({
   const keyword = search.toLowerCase();
 
   const filteredLicenses = licenses.filter((item) => {
-    return (
-      item.licenseKey.toLowerCase().includes(keyword) ||
-      item.customer.toLowerCase().includes(keyword) ||
-      item.email.toLowerCase().includes(keyword) ||
-      item.plan.toLowerCase().includes(keyword)
-    );
-  });
+  return (
+    (item.licenseKey || "").toLowerCase().includes(keyword) ||
+    (item.customer || "").toLowerCase().includes(keyword) ||
+    (item.email || "").toLowerCase().includes(keyword) ||
+    (item.plan || "").toLowerCase().includes(keyword)
+  );
+});
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm mt-8 overflow-hidden">

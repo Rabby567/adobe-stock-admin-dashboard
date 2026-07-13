@@ -81,7 +81,7 @@ const expiredLicenses = licenses.filter(
 ).length;
 
 const customerCount = new Set(
-  licenses.map((l) => l.email.toLowerCase())
+  licenses.map((l) => (l.email || "").toLowerCase())
 ).size;
 
 const [editLicense, setEditLicense] = useState<License | null>(null);
