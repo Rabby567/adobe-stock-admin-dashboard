@@ -15,7 +15,7 @@ export function generateLicenseKey() {
         ]
     ).join("");
 
-  return `ASM-${random()}-${random()}-${random()}`;
+  return `${random()}-${random()}-${random()}-${random()}`;
 
 }
 
